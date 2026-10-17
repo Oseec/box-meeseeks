@@ -71,18 +71,32 @@ int main(void)
         return EXIT_FAILURE;
     }
 
+    int result_pipe[2];
+
+    if (pipe(result_pipe) == -1) {
+        perror("Error al crear el pipe de respuesta");
+        close(task_pipe[0]);
+        close(task_pipe[1]);
+        return EXIT_FAILURE;
+    }
+
     pid_t child_pid = fork();
 
     if (child_pid < 0) {
         perror("Error al crear el Meeseeks");
+
         close(task_pipe[0]);
         close(task_pipe[1]);
+        close(result_pipe[0]);
+        close(result_pipe[1]);
+
         return EXIT_FAILURE;
     }
 
     if (child_pid == 0) {
         /*El hijo recibe la solicitud: solamete necesita leer.*/
         close(task_pipe[1]);
+        close(result_pipe[0]);
 
         char task[256];
         size_t total = 0;
@@ -129,11 +143,31 @@ int main(void)
             task
         );
 
+        char confirmation = 'R';
+        ssize_t sent;
+
+        /* El hijo envia la confirmacion a Box. */
+        do {
+            sent = write(
+                result_pipe[1],
+                &confirmation,
+                sizeof(confirmation)
+            );
+        } while (sent == -1 && errno == EINTR);
+
+        close(result_pipe[1]);
+
+        if (sent != (ssize_t)sizeof(confirmation)) {
+            perror("Error al enviar la confirmacion");
+            return EXIT_FAILURE;
+        }
+
         return EXIT_SUCCESS;
     }
 
     /*box envia la solicitud: solamente necesita escribir.*/
     close(task_pipe[0]);
+    close(result_pipe[1]);
 
     size_t length = strlen(request);
 
@@ -149,6 +183,29 @@ int main(void)
 
     /*esto permite que el hijo detecte el final del mensaje.*/
     close(task_pipe[1]);
+
+    char confirmation = '\0';
+    ssize_t received;
+
+    do {
+        received = read(
+            result_pipe[0],
+            &confirmation,
+            sizeof(confirmation)
+        );
+    } while (received == -1 && errno == EINTR);
+
+    close(result_pipe[0]);
+
+    if (received == sizeof(confirmation) && confirmation == 'R') {
+        printf(
+            "Box (pid=%ld): confirmacion recibida del Meeseeks pid=%ld.\n",
+            (long)getpid(),
+            (long)child_pid
+        );
+    } else {
+        fprintf(stderr, "Box: no se recibio una confirmacion valida.\n");
+    }
 
     while (waitpid(child_pid, NULL, 0) == -1) {
         if (errno == EINTR) {
