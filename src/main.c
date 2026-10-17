@@ -21,6 +21,30 @@
 
 int main(void)
 {
+
+    char request[256];
+
+    printf("Escriba una solicitud: ");
+    fflush(stdout);
+
+    if (fgets(request, sizeof(request), stdin) == NULL) {
+    fprintf(stderr, "No se pudo leer la solicitud.\n");
+    return EXIT_FAILURE;
+
+    }
+
+    if (strchr(request, '\n') == NULL && !feof(stdin)) {
+        fprintf(stderr, "La solicitud es demasiado larga.\n");
+        return EXIT_FAILURE;
+    }
+
+    request[strcspn(request, "\n")] = '\0';
+
+    if (request[0] == '\0') {
+        fprintf(stderr, "La solicitud no puede estar vacia.\n");
+        return EXIT_FAILURE;
+    }    
+
     int task_pipe[2];
 
     /*ambos procesos heredaran el pipe al ejecutar fork. */
@@ -93,7 +117,6 @@ int main(void)
     /*box envia la solicitud: solamente necesita escribir.*/
     close(task_pipe[0]);
 
-    const char *request = "Quiero un cafe frances";
     size_t length = strlen(request);
 
     if (write(task_pipe[1], request, length) != (ssize_t)length) {
