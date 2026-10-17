@@ -1,16 +1,18 @@
 /*
- * Proyecto: Box de Mr. Meeseeks
+ * Tarea: Box de Mr. Meeseeks
  * Autor: Isaac Gamba Ureña
  * Carné: 2022437592
  * Institución: Instituto Tecnológico de Costa Rica
  * Curso: Sistemas Operativos
- * Plataforma: Linux
  *
  * Primera etapa:
  * Crear un proceso hijo, mostrar sus identificadores
  * y esperar su terminación desde el proceso padre.
  */
- 
+
+
+#define _POSIX_C_SOURCE 200809L
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,6 +20,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 
 int main(void)
 {
@@ -61,7 +64,13 @@ int main(void)
             strcmp(request, "adiós") == 0) {
             break;
         }  
-    
+        
+        struct timespec started_at;
+
+        if (clock_gettime(CLOCK_MONOTONIC, &started_at) == -1) {
+            perror("Error al iniciar la medicion");
+            return EXIT_FAILURE;
+        }
 
     int task_pipe[2];
 
@@ -215,6 +224,23 @@ int main(void)
         perror("Error al esperar al Meeseeks");
         return EXIT_FAILURE;
     }
+
+        struct timespec finished_at;
+
+        if (clock_gettime(CLOCK_MONOTONIC, &finished_at) == -1) {
+            perror("Error al finalizar la medicion");
+            return EXIT_FAILURE;
+        }
+
+        double elapsed_seconds =
+            (double)(finished_at.tv_sec - started_at.tv_sec) +
+            (double)(finished_at.tv_nsec - started_at.tv_nsec) / 1000000000.0;
+
+        printf(
+            "Box: duracion de la solicitud %u: %.6f segundos.\n",
+            task_count + 1,
+            elapsed_seconds
+        );
 
         printf("Box: el Meeseeks termino; recupere el control.\n");
 
