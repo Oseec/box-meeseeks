@@ -21,29 +21,47 @@
 
 int main(void)
 {
+    unsigned int task_count = 0;
 
-    char request[256];
+    while (1) {
+        char request[256];
 
-    printf("Escriba una solicitud: ");
-    fflush(stdout);
+        printf("\nEscriba una solicitud (salir o adios para terminar): ");
+        fflush(stdout);
 
-    if (fgets(request, sizeof(request), stdin) == NULL) {
-    fprintf(stderr, "No se pudo leer la solicitud.\n");
-    return EXIT_FAILURE;
+        if (fgets(request, sizeof(request), stdin) == NULL) {
+            if (ferror(stdin)) {
+                perror("Error al leer la solicitud");
+                return EXIT_FAILURE;
+            }
 
-    }
+            break; 
+        }
 
-    if (strchr(request, '\n') == NULL && !feof(stdin)) {
-        fprintf(stderr, "La solicitud es demasiado larga.\n");
-        return EXIT_FAILURE;
-    }
+        if (strchr(request, '\n') == NULL && !feof(stdin)) {
+            int character;
 
-    request[strcspn(request, "\n")] = '\0';
+            /*descarta lo que no cupo para limpiar la siguiente lectura.*/
+            while ((character = getchar()) != '\n' && character != EOF) {
+            }
 
-    if (request[0] == '\0') {
-        fprintf(stderr, "La solicitud no puede estar vacia.\n");
-        return EXIT_FAILURE;
-    }    
+            fprintf(stderr, "La solicitud es demasiado larga.\n");
+            continue;
+        }
+
+        request[strcspn(request, "\n")] = '\0';
+
+        if (request[0] == '\0') {
+            fprintf(stderr, "La solicitud no puede estar vacia.\n");
+            continue;
+        }
+
+        if (strcmp(request, "salir") == 0 ||
+            strcmp(request, "adios") == 0 ||
+            strcmp(request, "adiós") == 0) {
+            break;
+        }  
+    
 
     int task_pipe[2];
 
@@ -63,7 +81,7 @@ int main(void)
     }
 
     if (child_pid == 0) {
-        /*El hijo recibe la solicitud: solamente necesita leer.*/
+        /*El hijo recibe la solicitud: solamete necesita leer.*/
         close(task_pipe[1]);
 
         char task[256];
@@ -129,7 +147,7 @@ int main(void)
         return EXIT_FAILURE;
     }
 
-    /*este cierre permite que el hijo detecte el final del mensaje.*/
+    /*esto permite que el hijo detecte el final del mensaje.*/
     close(task_pipe[1]);
 
     while (waitpid(child_pid, NULL, 0) == -1) {
@@ -141,7 +159,15 @@ int main(void)
         return EXIT_FAILURE;
     }
 
-    printf("Box: el Meeseeks termino; recupere el control.\n");
+        printf("Box: el Meeseeks termino; recupere el control.\n");
+
+        task_count++;
+    }
+
+    printf(
+        "\nBox: solicitudes enviadas a Meeseeks: %u. Adios.\n",
+        task_count
+    );
 
     return EXIT_SUCCESS;
 }
