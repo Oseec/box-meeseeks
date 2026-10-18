@@ -21,6 +21,13 @@
 #include <unistd.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
+#include <math.h>
+
+typedef struct {
+    char text[256];
+    double ease;
+} TaskMessage;
 
 int main(void)
 {
@@ -67,6 +74,51 @@ int main(void)
         
         struct timespec started_at;
 
+        char ease_input[64];
+
+        printf("Facilidad de la tarea (0=imposible, 100=muy facil): ");
+        fflush(stdout);
+
+        if (fgets(ease_input, sizeof(ease_input), stdin) == NULL) {
+            if (ferror(stdin)) {
+                perror("Error al leer la facilidad");
+                return EXIT_FAILURE;
+            }
+
+            break;
+        }
+
+        if (strchr(ease_input, '\n') == NULL && !feof(stdin)) {
+            int character;
+
+            while ((character = getchar()) != '\n' && character != EOF) {
+            }
+
+            fprintf(stderr, "El valor ingresado es demasiado largo.\n");
+            continue;
+        }
+
+        char *end;
+        errno = 0;
+
+        double ease = strtod(ease_input, &end);
+
+        if (end == ease_input) {
+            fprintf(stderr, "Debe ingresar un numero.\n");
+            continue;
+        }
+
+        /* Permite espacios o el salto de linea despues del numero. */
+        while (isspace((unsigned char)*end)) {
+            end++;
+        }
+
+        if (*end != '\0' || errno == ERANGE ||
+            !isfinite(ease) || ease < 0 || ease > 100) {
+            fprintf(stderr, "La facilidad debe ser un numero entre 0 y 100.\n");
+            continue;
+        }
+
         if (clock_gettime(CLOCK_MONOTONIC, &started_at) == -1) {
             perror("Error al iniciar la medicion");
             return EXIT_FAILURE;
@@ -107,15 +159,15 @@ int main(void)
         close(task_pipe[1]);
         close(result_pipe[0]);
 
-        char task[256];
+        TaskMessage task = {0};
         size_t total = 0;
 
-        /*Acumula los bytes recibidos hasta encontrar el final.*/
-        while (total < sizeof(task) - 1) {
+        /* Recibe todos los bytes que forman la estructura. */
+        while (total < sizeof(task)) {
             ssize_t received = read(
                 task_pipe[0],
-                task + total,
-                sizeof(task) - 1 - total
+                (char *)&task + total,
+                sizeof(task) - total
             );
 
             if (received == -1) {
@@ -125,6 +177,7 @@ int main(void)
 
                 perror("Error al leer la solicitud");
                 close(task_pipe[0]);
+                close(result_pipe[1]);
                 return EXIT_FAILURE;
             }
 
@@ -135,8 +188,21 @@ int main(void)
             total += (size_t)received;
         }
 
-        task[total] = '\0';
         close(task_pipe[0]);
+
+        if (total != sizeof(task)) {
+            fprintf(
+                stderr,
+                "[pid=%ld ppid=%ld] Se recibio un mensaje incompleto.\n",
+                (long)getpid(),
+                (long)getppid()
+            );
+
+            close(result_pipe[1]);
+            return EXIT_FAILURE;
+        }
+
+        task.text[sizeof(task.text) - 1] = '\0';
 
         printf(
             "Hi, I'm Mr. Meeseeks! Look at Meeeee. "
@@ -149,13 +215,20 @@ int main(void)
             "[pid=%ld ppid=%ld] Solicitud recibida: %s\n",
             (long)getpid(),
             (long)getppid(),
-            task
+            task.text
+        );
+
+        printf(
+            "[pid=%ld ppid=%ld] Facilidad recibida: %.4f\n",
+            (long)getpid(),
+            (long)getppid(),
+            task.ease
         );
 
         char confirmation = 'R';
         ssize_t sent;
 
-        /* El hijo envia la confirmacion a Box. */
+        /*l hijo envia la confirmacion a Box.*/
         do {
             sent = write(
                 result_pipe[1],
@@ -178,11 +251,22 @@ int main(void)
     close(task_pipe[0]);
     close(result_pipe[1]);
 
-    size_t length = strlen(request);
+    TaskMessage outgoing = {0};
 
-    if (write(task_pipe[1], request, length) != (ssize_t)length) {
-        fprintf(stderr, "Box: no se envio la solicitud completa.\n");
+    snprintf(outgoing.text, sizeof(outgoing.text), "%s", request);
+    outgoing.ease = ease;
+
+    ssize_t sent;
+
+    do {
+        sent = write(task_pipe[1], &outgoing, sizeof(outgoing));
+    } while (sent == -1 && errno == EINTR);
+
+    if (sent != (ssize_t)sizeof(outgoing)) {
+        fprintf(stderr, "Box: no se envio el mensaje completo.\n");
+
         close(task_pipe[1]);
+        close(result_pipe[0]);
 
         while (waitpid(child_pid, NULL, 0) == -1 && errno == EINTR) {
         }
