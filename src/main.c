@@ -225,24 +225,44 @@ int main(void)
             task.ease
         );
 
-        char confirmation = 'R';
+        char result;
+
+        if (task.ease > 85.0) {
+            result = 'S';
+
+            printf(
+                "[pid=%ld ppid=%ld] Puedo resolver esta solicitud sin ayuda.\n",
+                (long)getpid(),
+                (long)getppid()
+            );
+        } else {
+            result = 'H';
+
+            printf(
+                "[pid=%ld ppid=%ld] Necesito ayudantes para esta solicitud.\n",
+                (long)getpid(),
+                (long)getppid()
+            );
+        }
+
         ssize_t sent;
 
-        /*l hijo envia la confirmacion a Box.*/
         do {
-            sent = write(
-                result_pipe[1],
-                &confirmation,
-                sizeof(confirmation)
-            );
+            sent = write(result_pipe[1], &result, sizeof(result));
         } while (sent == -1 && errno == EINTR);
 
         close(result_pipe[1]);
 
-        if (sent != (ssize_t)sizeof(confirmation)) {
-            perror("Error al enviar la confirmacion");
+        if (sent != (ssize_t)sizeof(result)) {
+            perror("Error al enviar el resultado");
             return EXIT_FAILURE;
         }
+
+        printf(
+            "[pid=%ld ppid=%ld] Finalizo este intento. Adios.\n",
+            (long)getpid(),
+            (long)getppid()
+        );
 
         return EXIT_SUCCESS;
     }
@@ -277,27 +297,33 @@ int main(void)
     /*esto permite que el hijo detecte el final del mensaje.*/
     close(task_pipe[1]);
 
-    char confirmation = '\0';
+    char result = '\0';
     ssize_t received;
 
     do {
         received = read(
             result_pipe[0],
-            &confirmation,
-            sizeof(confirmation)
+            &result,
+            sizeof(result)
         );
     } while (received == -1 && errno == EINTR);
 
     close(result_pipe[0]);
 
-    if (received == sizeof(confirmation) && confirmation == 'R') {
+    if (received != (ssize_t)sizeof(result)) {
+        fprintf(stderr, "Box: no se recibio un resultado completo.\n");
+    } else if (result == 'S') {
         printf(
-            "Box (pid=%ld): confirmacion recibida del Meeseeks pid=%ld.\n",
-            (long)getpid(),
+            "Box: el Meeseeks pid=%ld reporto la solicitud como resuelta.\n",
+            (long)child_pid
+        );
+    } else if (result == 'H') {
+        printf(
+            "Box: el Meeseeks pid=%ld reporto que necesita ayudantes.\n",
             (long)child_pid
         );
     } else {
-        fprintf(stderr, "Box: no se recibio una confirmacion valida.\n");
+        fprintf(stderr, "Box: se recibio un codigo de resultado desconocido.\n");
     }
 
     while (waitpid(child_pid, NULL, 0) == -1) {
