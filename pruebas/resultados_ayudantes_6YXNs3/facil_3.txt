@@ -1,0 +1,26 @@
+Comando: ./build/box --task facil --ease 100 --delay 0.5 --seed 44 --limit 96 --csv pruebas/resultados_ayudantes_6YXNs3/resumen.csv 
+
+BOX pid=130752 | limite total=96 | caos=300.0 s | observacion=no
+[pid=130752 ppid=130727 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=130754.
+[pid=130754 ppid=130752 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130754, ppid=130752, N=1, i=1)
+[pid=130754 ppid=130752 N=1 i=1] PIPE RECIBIDO: facil
+[pid=130754 ppid=130752 N=1 i=1] FACILIDAD inicial=100.0000; efectiva=100.0000; PAUSA=0.500000 s (fija).
+[pid=130754 ppid=130752 N=1 i=1] SOLUCION encontrada: facil
+[pid=130754 ppid=130752 N=1 i=1] Tarea completada. Solucionador: pid=130754 ppid=130752 N=1 i=1.
+[pid=130754 ppid=130752 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+
+RESUMEN #1 | RESUELTA
+Solicitud: facil
+Resultado: Solicitud textual completada
+Facilidad inicial usada: 100.000000
+Meeseeks creados=1 | pico activos=1 | nivel maximo=1
+Duracion total (reloj monotono)=0.501055 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.001533 s
+Suma de pausas individuales=0.500315 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+Solucionador: pid=130754 ppid=130752 N=1 i=1
+
+INFORME FINAL BOX
+1. facil | RESUELTA | 1 Meeseeks | total=0.501055 s | CPU sin pausas=0.001533 s
+Solicitudes=1 | resueltas=1 | no resueltas=0. Adios.

@@ -1,0 +1,59 @@
+Comando: ./build/box --task imposible --ease 0 --delay 0.5 --seed 43 --limit 6 --csv pruebas/resultados_ayudantes_6YXNs3/resumen.csv 
+
+BOX pid=131183 | limite total=6 | caos=300.0 s | observacion=no
+[pid=131183 ppid=130727 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=131185.
+[pid=131185 ppid=131183 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131185, ppid=131183, N=1, i=1)
+[pid=131185 ppid=131183 N=1 i=1] PIPE RECIBIDO: imposible
+[pid=131185 ppid=131183 N=1 i=1] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131185 ppid=131183 N=1 i=1] AYUDA: facilidad efectiva=0.0000; minimo=5; P(extra)=1.0000; sorteo=0.0026; creare=5.
+[pid=131185 ppid=131183 N=1 i=1] PIPE SOLICITUD -> hijo pid=131186 N=2 i=1.
+[pid=131186 ppid=131185 N=2 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131186, ppid=131185, N=2, i=1)
+[pid=131186 ppid=131185 N=2 i=1] PIPE RECIBIDO: imposible
+[pid=131186 ppid=131185 N=2 i=1] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131185 ppid=131183 N=1 i=1] PIPE SOLICITUD -> hijo pid=131187 N=2 i=2.
+[pid=131187 ppid=131185 N=2 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131187, ppid=131185, N=2, i=2)
+[pid=131187 ppid=131185 N=2 i=2] PIPE RECIBIDO: imposible
+[pid=131187 ppid=131185 N=2 i=2] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131185 ppid=131183 N=1 i=1] PIPE SOLICITUD -> hijo pid=131188 N=2 i=3.
+[pid=131188 ppid=131185 N=2 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131188, ppid=131185, N=2, i=3)
+[pid=131188 ppid=131185 N=2 i=3] PIPE RECIBIDO: imposible
+[pid=131188 ppid=131185 N=2 i=3] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131185 ppid=131183 N=1 i=1] PIPE SOLICITUD -> hijo pid=131189 N=2 i=4.
+[pid=131189 ppid=131185 N=2 i=4] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131189, ppid=131185, N=2, i=4)
+[pid=131189 ppid=131185 N=2 i=4] PIPE RECIBIDO: imposible
+[pid=131189 ppid=131185 N=2 i=4] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131185 ppid=131183 N=1 i=1] PIPE SOLICITUD -> hijo pid=131190 N=2 i=5.
+[pid=131190 ppid=131185 N=2 i=5] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131190, ppid=131185, N=2, i=5)
+[pid=131190 ppid=131185 N=2 i=5] PIPE RECIBIDO: imposible
+[pid=131190 ppid=131185 N=2 i=5] FACILIDAD inicial=0.0000; efectiva=0.0000; PAUSA=0.500000 s (fija).
+[pid=131186 ppid=131185 N=2 i=1] CONTINGENCIA: limite total=6; No hay cupo para el grupo minimo de 5 ayudantes.
+[pid=131186 ppid=131185 N=2 i=1] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+[pid=131187 ppid=131185 N=2 i=2] CONTINGENCIA: limite total=6; No hay cupo para el grupo minimo de 5 ayudantes.
+[pid=131187 ppid=131185 N=2 i=2] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+[pid=131185 ppid=131183 N=1 i=1] PIPE RESULTADO <- hijo pid=131186: LIMITE_RECURSOS.
+[pid=131185 ppid=131183 N=1 i=1] PIPE RESULTADO <- hijo pid=131187: LIMITE_RECURSOS.
+[pid=131189 ppid=131185 N=2 i=4] CONTINGENCIA: limite total=6; No hay cupo para el grupo minimo de 5 ayudantes.
+[pid=131189 ppid=131185 N=2 i=4] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+[pid=131188 ppid=131185 N=2 i=3] CONTINGENCIA: limite total=6; No hay cupo para el grupo minimo de 5 ayudantes.
+[pid=131188 ppid=131185 N=2 i=3] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+[pid=131190 ppid=131185 N=2 i=5] CONTINGENCIA: limite total=6; No hay cupo para el grupo minimo de 5 ayudantes.
+[pid=131190 ppid=131185 N=2 i=5] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+[pid=131185 ppid=131183 N=1 i=1] PIPE RESULTADO <- hijo pid=131189: LIMITE_RECURSOS.
+[pid=131185 ppid=131183 N=1 i=1] PIPE RESULTADO <- hijo pid=131188: LIMITE_RECURSOS.
+[pid=131185 ppid=131183 N=1 i=1] PIPE RESULTADO <- hijo pid=131190: LIMITE_RECURSOS.
+[pid=131185 ppid=131183 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=LIMITE_RECURSOS. Envio resultado por PIPE.
+
+RESUMEN #1 | LIMITE_RECURSOS
+Solicitud: imposible
+Resultado: Ninguna rama resolvio antes del limite de procesos
+Facilidad inicial usada: 0.000000
+Meeseeks creados=6 | pico activos=6 | nivel maximo=2
+Duracion total (reloj monotono)=1.003020 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.006953 s
+Suma de pausas individuales=3.002397 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+
+INFORME FINAL BOX
+1. imposible | LIMITE_RECURSOS | 6 Meeseeks | total=1.003020 s | CPU sin pausas=0.006953 s
+Solicitudes=1 | resueltas=0 | no resueltas=1. Adios.

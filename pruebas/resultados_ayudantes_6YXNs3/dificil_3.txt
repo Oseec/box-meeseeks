@@ -1,0 +1,532 @@
+Comando: ./build/box --task dificil --ease 20 --delay 0.5 --seed 44 --limit 96 --csv pruebas/resultados_ayudantes_6YXNs3/resumen.csv 
+
+BOX pid=131042 | limite total=96 | caos=300.0 s | observacion=no
+[pid=131042 ppid=130727 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=131044.
+[pid=131044 ppid=131042 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131044, ppid=131042, N=1, i=1)
+[pid=131044 ppid=131042 N=1 i=1] PIPE RECIBIDO: dificil
+[pid=131044 ppid=131042 N=1 i=1] FACILIDAD inicial=20.0000; efectiva=20.0000; PAUSA=0.500000 s (fija).
+[pid=131044 ppid=131042 N=1 i=1] AYUDA: facilidad efectiva=20.0000; minimo=5; P(extra)=0.8000; sorteo=0.0028; creare=6.
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131045 N=2 i=1.
+[pid=131045 ppid=131044 N=2 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131045, ppid=131044, N=2, i=1)
+[pid=131045 ppid=131044 N=2 i=1] PIPE RECIBIDO: dificil
+[pid=131045 ppid=131044 N=2 i=1] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131046 N=2 i=2.
+[pid=131046 ppid=131044 N=2 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131046, ppid=131044, N=2, i=2)
+[pid=131046 ppid=131044 N=2 i=2] PIPE RECIBIDO: dificil
+[pid=131046 ppid=131044 N=2 i=2] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131047 N=2 i=3.
+[pid=131047 ppid=131044 N=2 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131047, ppid=131044, N=2, i=3)
+[pid=131047 ppid=131044 N=2 i=3] PIPE RECIBIDO: dificil
+[pid=131047 ppid=131044 N=2 i=3] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131048 N=2 i=4.
+[pid=131048 ppid=131044 N=2 i=4] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131048, ppid=131044, N=2, i=4)
+[pid=131048 ppid=131044 N=2 i=4] PIPE RECIBIDO: dificil
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131049 N=2 i=5.
+[pid=131048 ppid=131044 N=2 i=4] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131049 ppid=131044 N=2 i=5] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131049, ppid=131044, N=2, i=5)
+[pid=131049 ppid=131044 N=2 i=5] PIPE RECIBIDO: dificil
+[pid=131044 ppid=131042 N=1 i=1] PIPE SOLICITUD -> hijo pid=131050 N=2 i=6.
+[pid=131049 ppid=131044 N=2 i=5] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131050 ppid=131044 N=2 i=6] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131050, ppid=131044, N=2, i=6)
+[pid=131050 ppid=131044 N=2 i=6] PIPE RECIBIDO: dificil
+[pid=131050 ppid=131044 N=2 i=6] FACILIDAD inicial=20.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=131045 ppid=131044 N=2 i=1] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.2183; creare=3.
+[pid=131046 ppid=131044 N=2 i=2] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.8731; creare=2.
+[pid=131048 ppid=131044 N=2 i=4] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.2507; creare=3.
+[pid=131045 ppid=131044 N=2 i=1] PIPE SOLICITUD -> hijo pid=131115 N=3 i=1.
+[pid=131047 ppid=131044 N=2 i=3] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.2003; creare=3.
+[pid=131115 ppid=131045 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131115, ppid=131045, N=3, i=1)
+[pid=131115 ppid=131045 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131046 ppid=131044 N=2 i=2] PIPE SOLICITUD -> hijo pid=131116 N=3 i=1.
+[pid=131115 ppid=131045 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131050 ppid=131044 N=2 i=6] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.2862; creare=3.
+[pid=131049 ppid=131044 N=2 i=5] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.1870; creare=3.
+[pid=131047 ppid=131044 N=2 i=3] PIPE SOLICITUD -> hijo pid=131117 N=3 i=1.
+[pid=131116 ppid=131046 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131116, ppid=131046, N=3, i=1)
+[pid=131116 ppid=131046 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131045 ppid=131044 N=2 i=1] PIPE SOLICITUD -> hijo pid=131118 N=3 i=2.
+[pid=131048 ppid=131044 N=2 i=4] PIPE SOLICITUD -> hijo pid=131119 N=3 i=1.
+[pid=131116 ppid=131046 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131117 ppid=131047 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131117, ppid=131047, N=3, i=1)
+[pid=131117 ppid=131047 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131119 ppid=131048 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131119, ppid=131048, N=3, i=1)
+[pid=131117 ppid=131047 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131119 ppid=131048 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131118 ppid=131045 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131118, ppid=131045, N=3, i=2)
+[pid=131118 ppid=131045 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131119 ppid=131048 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131118 ppid=131045 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131050 ppid=131044 N=2 i=6] PIPE SOLICITUD -> hijo pid=131122 N=3 i=1.
+[pid=131049 ppid=131044 N=2 i=5] PIPE SOLICITUD -> hijo pid=131121 N=3 i=1.
+[pid=131046 ppid=131044 N=2 i=2] PIPE SOLICITUD -> hijo pid=131120 N=3 i=2.
+[pid=131048 ppid=131044 N=2 i=4] PIPE SOLICITUD -> hijo pid=131124 N=3 i=2.
+[pid=131045 ppid=131044 N=2 i=1] PIPE SOLICITUD -> hijo pid=131125 N=3 i=3.
+[pid=131047 ppid=131044 N=2 i=3] PIPE SOLICITUD -> hijo pid=131123 N=3 i=2.
+[pid=131121 ppid=131049 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131121, ppid=131049, N=3, i=1)
+[pid=131121 ppid=131049 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131124 ppid=131048 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131124, ppid=131048, N=3, i=2)
+[pid=131124 ppid=131048 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131123 ppid=131047 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131123, ppid=131047, N=3, i=2)
+[pid=131123 ppid=131047 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131125 ppid=131045 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131125, ppid=131045, N=3, i=3)
+[pid=131125 ppid=131045 N=3 i=3] PIPE RECIBIDO: dificil
+[pid=131121 ppid=131049 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131124 ppid=131048 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131122 ppid=131050 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131122, ppid=131050, N=3, i=1)
+[pid=131122 ppid=131050 N=3 i=1] PIPE RECIBIDO: dificil
+[pid=131123 ppid=131047 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131125 ppid=131045 N=3 i=3] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131120 ppid=131046 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131120, ppid=131046, N=3, i=2)
+[pid=131120 ppid=131046 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131122 ppid=131050 N=3 i=1] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131120 ppid=131046 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131049 ppid=131044 N=2 i=5] PIPE SOLICITUD -> hijo pid=131126 N=3 i=2.
+[pid=131050 ppid=131044 N=2 i=6] PIPE SOLICITUD -> hijo pid=131127 N=3 i=2.
+[pid=131048 ppid=131044 N=2 i=4] PIPE SOLICITUD -> hijo pid=131128 N=3 i=3.
+[pid=131047 ppid=131044 N=2 i=3] PIPE SOLICITUD -> hijo pid=131129 N=3 i=3.
+[pid=131126 ppid=131049 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131126, ppid=131049, N=3, i=2)
+[pid=131126 ppid=131049 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131127 ppid=131050 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131127, ppid=131050, N=3, i=2)
+[pid=131128 ppid=131048 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131128, ppid=131048, N=3, i=3)
+[pid=131128 ppid=131048 N=3 i=3] PIPE RECIBIDO: dificil
+[pid=131127 ppid=131050 N=3 i=2] PIPE RECIBIDO: dificil
+[pid=131126 ppid=131049 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131127 ppid=131050 N=3 i=2] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131128 ppid=131048 N=3 i=3] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131129 ppid=131047 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131129, ppid=131047, N=3, i=3)
+[pid=131129 ppid=131047 N=3 i=3] PIPE RECIBIDO: dificil
+[pid=131129 ppid=131047 N=3 i=3] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131050 ppid=131044 N=2 i=6] PIPE SOLICITUD -> hijo pid=131130 N=3 i=3.
+[pid=131049 ppid=131044 N=2 i=5] PIPE SOLICITUD -> hijo pid=131131 N=3 i=3.
+[pid=131130 ppid=131050 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131130, ppid=131050, N=3, i=3)
+[pid=131130 ppid=131050 N=3 i=3] PIPE RECIBIDO: dificil
+[pid=131130 ppid=131050 N=3 i=3] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131131 ppid=131049 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131131, ppid=131049, N=3, i=3)
+[pid=131131 ppid=131049 N=3 i=3] PIPE RECIBIDO: dificil
+[pid=131131 ppid=131049 N=3 i=3] FACILIDAD inicial=20.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=131115 ppid=131045 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.2822; creare=2.
+[pid=131117 ppid=131047 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.7693; creare=2.
+[pid=131118 ppid=131045 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.1629; creare=3.
+[pid=131121 ppid=131049 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.3452; creare=2.
+[pid=131116 ppid=131046 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.4749; creare=2.
+[pid=131124 ppid=131048 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.2370; creare=2.
+[pid=131122 ppid=131050 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.0755; creare=3.
+[pid=131123 ppid=131047 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.9474; creare=2.
+[pid=131120 ppid=131046 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.5289; creare=2.
+[pid=131115 ppid=131045 N=3 i=1] PIPE SOLICITUD -> hijo pid=131132 N=4 i=1.
+[pid=131118 ppid=131045 N=3 i=2] PIPE SOLICITUD -> hijo pid=131134 N=4 i=1.
+[pid=131117 ppid=131047 N=3 i=1] PIPE SOLICITUD -> hijo pid=131133 N=4 i=1.
+[pid=131124 ppid=131048 N=3 i=2] PIPE SOLICITUD -> hijo pid=131135 N=4 i=1.
+[pid=131116 ppid=131046 N=3 i=1] PIPE SOLICITUD -> hijo pid=131136 N=4 i=1.
+[pid=131132 ppid=131115 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131132, ppid=131115, N=4, i=1)
+[pid=131122 ppid=131050 N=3 i=1] PIPE SOLICITUD -> hijo pid=131137 N=4 i=1.
+[pid=131132 ppid=131115 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131115 ppid=131045 N=3 i=1] PIPE SOLICITUD -> hijo pid=131139 N=4 i=2.
+[pid=131121 ppid=131049 N=3 i=1] PIPE SOLICITUD -> hijo pid=131138 N=4 i=1.
+[pid=131117 ppid=131047 N=3 i=1] PIPE SOLICITUD -> hijo pid=131141 N=4 i=2.
+[pid=131118 ppid=131045 N=3 i=2] PIPE SOLICITUD -> hijo pid=131140 N=4 i=2.
+[pid=131123 ppid=131047 N=3 i=2] PIPE SOLICITUD -> hijo pid=131142 N=4 i=1.
+[pid=131124 ppid=131048 N=3 i=2] PIPE SOLICITUD -> hijo pid=131143 N=4 i=2.
+[pid=131132 ppid=131115 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131139 ppid=131115 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131139, ppid=131115, N=4, i=2)
+[pid=131139 ppid=131115 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131141 ppid=131117 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131141, ppid=131117, N=4, i=2)
+[pid=131141 ppid=131117 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131120 ppid=131046 N=3 i=2] PIPE SOLICITUD -> hijo pid=131144 N=4 i=1.
+[pid=131139 ppid=131115 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131131 ppid=131049 N=3 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.3526; creare=2.
+[pid=131130 ppid=131050 N=3 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.5229; creare=2.
+[pid=131134 ppid=131118 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131134, ppid=131118, N=4, i=1)
+[pid=131141 ppid=131117 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131134 ppid=131118 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131129 ppid=131047 N=3 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.4222; creare=2.
+[pid=131135 ppid=131124 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131135, ppid=131124, N=4, i=1)
+[pid=131135 ppid=131124 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131134 ppid=131118 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131133 ppid=131117 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131133, ppid=131117, N=4, i=1)
+[pid=131133 ppid=131117 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131118 ppid=131045 N=3 i=2] PIPE SOLICITUD -> hijo pid=131146 N=4 i=3.
+[pid=131116 ppid=131046 N=3 i=1] PIPE SOLICITUD -> hijo pid=131145 N=4 i=2.
+[pid=131133 ppid=131117 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131126 ppid=131049 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.2012; creare=2.
+[pid=131143 ppid=131124 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131143, ppid=131124, N=4, i=2)
+[pid=131143 ppid=131124 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131140 ppid=131118 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131140, ppid=131118, N=4, i=2)
+[pid=131140 ppid=131118 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131143 ppid=131124 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131130 ppid=131050 N=3 i=3] PIPE SOLICITUD -> hijo pid=131149 N=4 i=1.
+[pid=131140 ppid=131118 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131135 ppid=131124 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131129 ppid=131047 N=3 i=3] PIPE SOLICITUD -> hijo pid=131151 N=4 i=1.
+[pid=131136 ppid=131116 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131136, ppid=131116, N=4, i=1)
+[pid=131136 ppid=131116 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131137 ppid=131122 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131137, ppid=131122, N=4, i=1)
+[pid=131137 ppid=131122 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131146 ppid=131118 N=4 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131146, ppid=131118, N=4, i=3)
+[pid=131146 ppid=131118 N=4 i=3] PIPE RECIBIDO: dificil
+[pid=131149 ppid=131130 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131149, ppid=131130, N=4, i=1)
+[pid=131149 ppid=131130 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131146 ppid=131118 N=4 i=3] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131137 ppid=131122 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131136 ppid=131116 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131138 ppid=131121 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131138, ppid=131121, N=4, i=1)
+[pid=131138 ppid=131121 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131149 ppid=131130 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131125 ppid=131045 N=3 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.9275; creare=2.
+[pid=131142 ppid=131123 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131142, ppid=131123, N=4, i=1)
+[pid=131138 ppid=131121 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131142 ppid=131123 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131144 ppid=131120 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131144, ppid=131120, N=4, i=1)
+[pid=131144 ppid=131120 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131127 ppid=131050 N=3 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.5813; creare=2.
+[pid=131128 ppid=131048 N=3 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.0967; creare=3.
+[pid=131130 ppid=131050 N=3 i=3] PIPE SOLICITUD -> hijo pid=131154 N=4 i=2.
+[pid=131142 ppid=131123 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131129 ppid=131047 N=3 i=3] PIPE SOLICITUD -> hijo pid=131155 N=4 i=2.
+[pid=131144 ppid=131120 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131131 ppid=131049 N=3 i=3] PIPE SOLICITUD -> hijo pid=131153 N=4 i=1.
+[pid=131126 ppid=131049 N=3 i=2] PIPE SOLICITUD -> hijo pid=131156 N=4 i=1.
+[pid=131119 ppid=131048 N=3 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.9772; creare=2.
+[pid=131145 ppid=131116 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131145, ppid=131116, N=4, i=2)
+[pid=131145 ppid=131116 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131147 ppid=131122 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131147, ppid=131122, N=4, i=2)
+[pid=131147 ppid=131122 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131154 ppid=131130 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131154, ppid=131130, N=4, i=2)
+[pid=131154 ppid=131130 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131145 ppid=131116 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131154 ppid=131130 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131153 ppid=131131 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131153, ppid=131131, N=4, i=1)
+[pid=131153 ppid=131131 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131147 ppid=131122 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131128 ppid=131048 N=3 i=3] PIPE SOLICITUD -> hijo pid=131157 N=4 i=1.
+[pid=131120 ppid=131046 N=3 i=2] PIPE SOLICITUD -> hijo pid=131152 N=4 i=2.
+[pid=131153 ppid=131131 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131152 ppid=131120 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131152, ppid=131120, N=4, i=2)
+[pid=131152 ppid=131120 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131156 ppid=131126 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131156, ppid=131126, N=4, i=1)
+[pid=131156 ppid=131126 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131123 ppid=131047 N=3 i=2] PIPE SOLICITUD -> hijo pid=131150 N=4 i=2.
+[pid=131151 ppid=131129 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131151, ppid=131129, N=4, i=1)
+[pid=131151 ppid=131129 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131152 ppid=131120 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131156 ppid=131126 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131151 ppid=131129 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131125 ppid=131045 N=3 i=3] PIPE SOLICITUD -> hijo pid=131158 N=4 i=1.
+[pid=131119 ppid=131048 N=3 i=1] PIPE SOLICITUD -> hijo pid=131160 N=4 i=1.
+[pid=131127 ppid=131050 N=3 i=2] PIPE SOLICITUD -> hijo pid=131159 N=4 i=1.
+[pid=131128 ppid=131048 N=3 i=3] PIPE SOLICITUD -> hijo pid=131162 N=4 i=2.
+[pid=131126 ppid=131049 N=3 i=2] PIPE SOLICITUD -> hijo pid=131161 N=4 i=2.
+[pid=131150 ppid=131123 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131150, ppid=131123, N=4, i=2)
+[pid=131150 ppid=131123 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131155 ppid=131129 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131155, ppid=131129, N=4, i=2)
+[pid=131155 ppid=131129 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131158 ppid=131125 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131158, ppid=131125, N=4, i=1)
+[pid=131158 ppid=131125 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131122 ppid=131050 N=3 i=1] PIPE SOLICITUD -> hijo pid=131147 N=4 i=2.
+[pid=131155 ppid=131129 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131150 ppid=131123 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131158 ppid=131125 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131159 ppid=131127 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131159, ppid=131127, N=4, i=1)
+[pid=131159 ppid=131127 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131161 ppid=131126 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131161, ppid=131126, N=4, i=2)
+[pid=131159 ppid=131127 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131161 ppid=131126 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131161 ppid=131126 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131160 ppid=131119 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131160, ppid=131119, N=4, i=1)
+[pid=131160 ppid=131119 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131121 ppid=131049 N=3 i=1] PIPE SOLICITUD -> hijo pid=131148 N=4 i=2.
+[pid=131160 ppid=131119 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131127 ppid=131050 N=3 i=2] PIPE SOLICITUD -> hijo pid=131164 N=4 i=2.
+[pid=131125 ppid=131045 N=3 i=3] PIPE SOLICITUD -> hijo pid=131163 N=4 i=2.
+[pid=131128 ppid=131048 N=3 i=3] PIPE SOLICITUD -> hijo pid=131165 N=4 i=3.
+[pid=131119 ppid=131048 N=3 i=1] PIPE SOLICITUD -> hijo pid=131166 N=4 i=2.
+[pid=131131 ppid=131049 N=3 i=3] PIPE SOLICITUD -> hijo pid=131167 N=4 i=2.
+[pid=131157 ppid=131128 N=4 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131157, ppid=131128, N=4, i=1)
+[pid=131157 ppid=131128 N=4 i=1] PIPE RECIBIDO: dificil
+[pid=131164 ppid=131127 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131164, ppid=131127, N=4, i=2)
+[pid=131162 ppid=131128 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131162, ppid=131128, N=4, i=2)
+[pid=131166 ppid=131119 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131166, ppid=131119, N=4, i=2)
+[pid=131162 ppid=131128 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131166 ppid=131119 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131148 ppid=131121 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131148, ppid=131121, N=4, i=2)
+[pid=131122 ppid=131050 N=3 i=1] PIPE SOLICITUD -> hijo pid=131168 N=4 i=3.
+[pid=131148 ppid=131121 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131157 ppid=131128 N=4 i=1] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131164 ppid=131127 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131162 ppid=131128 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131166 ppid=131119 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131165 ppid=131128 N=4 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131165, ppid=131128, N=4, i=3)
+[pid=131164 ppid=131127 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131165 ppid=131128 N=4 i=3] PIPE RECIBIDO: dificil
+[pid=131148 ppid=131121 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131167 ppid=131131 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131167, ppid=131131, N=4, i=2)
+[pid=131167 ppid=131131 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131163 ppid=131125 N=4 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131163, ppid=131125, N=4, i=2)
+[pid=131163 ppid=131125 N=4 i=2] PIPE RECIBIDO: dificil
+[pid=131165 ppid=131128 N=4 i=3] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131163 ppid=131125 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131167 ppid=131131 N=4 i=2] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131168 ppid=131122 N=4 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=131168, ppid=131122, N=4, i=3)
+[pid=131168 ppid=131122 N=4 i=3] PIPE RECIBIDO: dificil
+[pid=131168 ppid=131122 N=4 i=3] FACILIDAD inicial=20.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=131132 ppid=131115 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131132 ppid=131115 N=4 i=1] Tarea completada. Solucionador: pid=131132 ppid=131115 N=4 i=1.
+[pid=131132 ppid=131115 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131144 ppid=131120 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131144 ppid=131120 N=4 i=1] Tarea completada. Solucionador: pid=131144 ppid=131120 N=4 i=1.
+[pid=131144 ppid=131120 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131147 ppid=131122 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131147 ppid=131122 N=4 i=2] Tarea completada. Solucionador: pid=131147 ppid=131122 N=4 i=2.
+[pid=131147 ppid=131122 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131146 ppid=131118 N=4 i=3] SOLUCION encontrada: dificil
+[pid=131146 ppid=131118 N=4 i=3] Tarea completada. Solucionador: pid=131146 ppid=131118 N=4 i=3.
+[pid=131146 ppid=131118 N=4 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131142 ppid=131123 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131142 ppid=131123 N=4 i=1] Tarea completada. Solucionador: pid=131142 ppid=131123 N=4 i=1.
+[pid=131142 ppid=131123 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131151 ppid=131129 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131151 ppid=131129 N=4 i=1] Tarea completada. Solucionador: pid=131151 ppid=131129 N=4 i=1.
+[pid=131151 ppid=131129 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131143 ppid=131124 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131143 ppid=131124 N=4 i=2] Tarea completada. Solucionador: pid=131143 ppid=131124 N=4 i=2.
+[pid=131136 ppid=131116 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131135 ppid=131124 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131138 ppid=131121 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131135 ppid=131124 N=4 i=1] Tarea completada. Solucionador: pid=131135 ppid=131124 N=4 i=1.
+[pid=131135 ppid=131124 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131138 ppid=131121 N=4 i=1] Tarea completada. Solucionador: pid=131138 ppid=131121 N=4 i=1.
+[pid=131138 ppid=131121 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131155 ppid=131129 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131155 ppid=131129 N=4 i=2] Tarea completada. Solucionador: pid=131155 ppid=131129 N=4 i=2.
+[pid=131155 ppid=131129 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131134 ppid=131118 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131134 ppid=131118 N=4 i=1] Tarea completada. Solucionador: pid=131134 ppid=131118 N=4 i=1.
+[pid=131134 ppid=131118 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131115 ppid=131045 N=3 i=1] PIPE RESULTADO <- hijo pid=131132: RESUELTA.
+[pid=131149 ppid=131130 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131115 ppid=131045 N=3 i=1] PIPE CANCELAR -> hijo pid=131139.
+[pid=131149 ppid=131130 N=4 i=1] Tarea completada. Solucionador: pid=131149 ppid=131130 N=4 i=1.
+[pid=131137 ppid=131122 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131149 ppid=131130 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131137 ppid=131122 N=4 i=1] Tarea completada. Solucionador: pid=131137 ppid=131122 N=4 i=1.
+[pid=131137 ppid=131122 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131139 ppid=131115 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=CANCELADA. Envio resultado por PIPE.
+[pid=131143 ppid=131124 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131133 ppid=131117 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131133 ppid=131117 N=4 i=1] Tarea completada. Solucionador: pid=131133 ppid=131117 N=4 i=1.
+[pid=131133 ppid=131117 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131166 ppid=131119 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131166 ppid=131119 N=4 i=2] Tarea completada. Solucionador: pid=131166 ppid=131119 N=4 i=2.
+[pid=131140 ppid=131118 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131140 ppid=131118 N=4 i=2] Tarea completada. Solucionador: pid=131140 ppid=131118 N=4 i=2.
+[pid=131140 ppid=131118 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131141 ppid=131117 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131154 ppid=131130 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131141 ppid=131117 N=4 i=2] Tarea completada. Solucionador: pid=131141 ppid=131117 N=4 i=2.
+[pid=131154 ppid=131130 N=4 i=2] Tarea completada. Solucionador: pid=131154 ppid=131130 N=4 i=2.
+[pid=131154 ppid=131130 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131141 ppid=131117 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131123 ppid=131047 N=3 i=2] PIPE RESULTADO <- hijo pid=131142: RESUELTA.
+[pid=131123 ppid=131047 N=3 i=2] PIPE CANCELAR -> hijo pid=131150.
+[pid=131168 ppid=131122 N=4 i=3] SOLUCION encontrada: dificil
+[pid=131168 ppid=131122 N=4 i=3] Tarea completada. Solucionador: pid=131168 ppid=131122 N=4 i=3.
+[pid=131166 ppid=131119 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131168 ppid=131122 N=4 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131160 ppid=131119 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131160 ppid=131119 N=4 i=1] Tarea completada. Solucionador: pid=131160 ppid=131119 N=4 i=1.
+[pid=131160 ppid=131119 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131161 ppid=131126 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131161 ppid=131126 N=4 i=2] Tarea completada. Solucionador: pid=131161 ppid=131126 N=4 i=2.
+[pid=131161 ppid=131126 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131157 ppid=131128 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131157 ppid=131128 N=4 i=1] Tarea completada. Solucionador: pid=131157 ppid=131128 N=4 i=1.
+[pid=131157 ppid=131128 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131129 ppid=131047 N=3 i=3] PIPE RESULTADO <- hijo pid=131151: RESUELTA.
+[pid=131129 ppid=131047 N=3 i=3] PIPE CANCELAR -> hijo pid=131155.
+[pid=131124 ppid=131048 N=3 i=2] PIPE RESULTADO <- hijo pid=131135: RESUELTA.
+[pid=131124 ppid=131048 N=3 i=2] PIPE CANCELAR -> hijo pid=131143.
+[pid=131130 ppid=131050 N=3 i=3] PIPE RESULTADO <- hijo pid=131149: RESUELTA.
+[pid=131163 ppid=131125 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131163 ppid=131125 N=4 i=2] Tarea completada. Solucionador: pid=131163 ppid=131125 N=4 i=2.
+[pid=131130 ppid=131050 N=3 i=3] PIPE CANCELAR -> hijo pid=131154.
+[pid=131163 ppid=131125 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131167 ppid=131131 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131167 ppid=131131 N=4 i=2] Tarea completada. Solucionador: pid=131167 ppid=131131 N=4 i=2.
+[pid=131167 ppid=131131 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131124 ppid=131048 N=3 i=2] PIPE RESULTADO <- hijo pid=131143: RESUELTA.
+[pid=131124 ppid=131048 N=3 i=2] Tarea completada. Solucionador: pid=131135 ppid=131124 N=4 i=1.
+[pid=131159 ppid=131127 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131124 ppid=131048 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131159 ppid=131127 N=4 i=1] Tarea completada. Solucionador: pid=131159 ppid=131127 N=4 i=1.
+[pid=131159 ppid=131127 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131130 ppid=131050 N=3 i=3] PIPE RESULTADO <- hijo pid=131154: RESUELTA.
+[pid=131130 ppid=131050 N=3 i=3] Tarea completada. Solucionador: pid=131149 ppid=131130 N=4 i=1.
+[pid=131130 ppid=131050 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131152 ppid=131120 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131152 ppid=131120 N=4 i=2] Tarea completada. Solucionador: pid=131152 ppid=131120 N=4 i=2.
+[pid=131152 ppid=131120 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131120 ppid=131046 N=3 i=2] PIPE RESULTADO <- hijo pid=131144: RESUELTA.
+[pid=131115 ppid=131045 N=3 i=1] PIPE RESULTADO <- hijo pid=131139: CANCELADA.
+[pid=131120 ppid=131046 N=3 i=2] PIPE CANCELAR -> hijo pid=131152.
+[pid=131115 ppid=131045 N=3 i=1] Tarea completada. Solucionador: pid=131132 ppid=131115 N=4 i=1.
+[pid=131115 ppid=131045 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131153 ppid=131131 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131153 ppid=131131 N=4 i=1] Tarea completada. Solucionador: pid=131153 ppid=131131 N=4 i=1.
+[pid=131153 ppid=131131 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131122 ppid=131050 N=3 i=1] PIPE RESULTADO <- hijo pid=131147: RESUELTA.
+[pid=131122 ppid=131050 N=3 i=1] PIPE CANCELAR -> hijo pid=131137.
+[pid=131122 ppid=131050 N=3 i=1] PIPE CANCELAR -> hijo pid=131168.
+[pid=131118 ppid=131045 N=3 i=2] PIPE RESULTADO <- hijo pid=131134: RESUELTA.
+[pid=131118 ppid=131045 N=3 i=2] PIPE CANCELAR -> hijo pid=131140.
+[pid=131118 ppid=131045 N=3 i=2] PIPE CANCELAR -> hijo pid=131146.
+[pid=131126 ppid=131049 N=3 i=2] PIPE RESULTADO <- hijo pid=131161: RESUELTA.
+[pid=131117 ppid=131047 N=3 i=1] PIPE RESULTADO <- hijo pid=131133: RESUELTA.
+[pid=131129 ppid=131047 N=3 i=3] PIPE RESULTADO <- hijo pid=131155: RESUELTA.
+[pid=131129 ppid=131047 N=3 i=3] Tarea completada. Solucionador: pid=131151 ppid=131129 N=4 i=1.
+[pid=131156 ppid=131126 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=CANCELADA. Envio resultado por PIPE.
+[pid=131129 ppid=131047 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131148 ppid=131121 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131136 ppid=131116 N=4 i=1] Tarea completada. Solucionador: pid=131136 ppid=131116 N=4 i=1.
+[pid=131136 ppid=131116 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131148 ppid=131121 N=4 i=2] Tarea completada. Solucionador: pid=131148 ppid=131121 N=4 i=2.
+[pid=131148 ppid=131121 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131117 ppid=131047 N=3 i=1] PIPE CANCELAR -> hijo pid=131141.
+[pid=131126 ppid=131049 N=3 i=2] PIPE CANCELAR -> hijo pid=131156.
+[pid=131045 ppid=131044 N=2 i=1] PIPE RESULTADO <- hijo pid=131115: RESUELTA.
+[pid=131045 ppid=131044 N=2 i=1] PIPE CANCELAR -> hijo pid=131118.
+[pid=131045 ppid=131044 N=2 i=1] PIPE CANCELAR -> hijo pid=131125.
+[pid=131145 ppid=131116 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131162 ppid=131128 N=4 i=2] SOLUCION encontrada: dificil
+[pid=131145 ppid=131116 N=4 i=2] Tarea completada. Solucionador: pid=131145 ppid=131116 N=4 i=2.
+[pid=131162 ppid=131128 N=4 i=2] Tarea completada. Solucionador: pid=131162 ppid=131128 N=4 i=2.
+[pid=131145 ppid=131116 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131162 ppid=131128 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131125 ppid=131045 N=3 i=3] PIPE RESULTADO <- hijo pid=131163: RESUELTA.
+[pid=131127 ppid=131050 N=3 i=2] PIPE RESULTADO <- hijo pid=131159: RESUELTA.
+[pid=131050 ppid=131044 N=2 i=6] PIPE RESULTADO <- hijo pid=131130: RESUELTA.
+[pid=131125 ppid=131045 N=3 i=3] PIPE CANCELAR -> hijo pid=131158.
+[pid=131050 ppid=131044 N=2 i=6] PIPE CANCELAR -> hijo pid=131122.
+[pid=131127 ppid=131050 N=3 i=2] PIPE CANCELAR -> hijo pid=131164.
+[pid=131050 ppid=131044 N=2 i=6] PIPE CANCELAR -> hijo pid=131127.
+[pid=131128 ppid=131048 N=3 i=3] PIPE RESULTADO <- hijo pid=131157: RESUELTA.
+[pid=131128 ppid=131048 N=3 i=3] PIPE CANCELAR -> hijo pid=131162.
+[pid=131117 ppid=131047 N=3 i=1] PIPE RESULTADO <- hijo pid=131141: RESUELTA.
+[pid=131122 ppid=131050 N=3 i=1] PIPE RESULTADO <- hijo pid=131137: RESUELTA.
+[pid=131117 ppid=131047 N=3 i=1] Tarea completada. Solucionador: pid=131133 ppid=131117 N=4 i=1.
+[pid=131158 ppid=131125 N=4 i=1] SOLUCION encontrada: dificil
+[pid=131158 ppid=131125 N=4 i=1] Tarea completada. Solucionador: pid=131158 ppid=131125 N=4 i=1.
+[pid=131158 ppid=131125 N=4 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131117 ppid=131047 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131048 ppid=131044 N=2 i=4] PIPE RESULTADO <- hijo pid=131124: RESUELTA.
+[pid=131048 ppid=131044 N=2 i=4] PIPE CANCELAR -> hijo pid=131119.
+[pid=131150 ppid=131123 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=CANCELADA. Envio resultado por PIPE.
+[pid=131048 ppid=131044 N=2 i=4] PIPE CANCELAR -> hijo pid=131128.
+[pid=131120 ppid=131046 N=3 i=2] PIPE RESULTADO <- hijo pid=131152: RESUELTA.
+[pid=131120 ppid=131046 N=3 i=2] Tarea completada. Solucionador: pid=131144 ppid=131120 N=4 i=1.
+[pid=131120 ppid=131046 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131118 ppid=131045 N=3 i=2] PIPE RESULTADO <- hijo pid=131146: RESUELTA.
+[pid=131122 ppid=131050 N=3 i=1] PIPE RESULTADO <- hijo pid=131168: RESUELTA.
+[pid=131121 ppid=131049 N=3 i=1] PIPE RESULTADO <- hijo pid=131138: RESUELTA.
+[pid=131126 ppid=131049 N=3 i=2] PIPE RESULTADO <- hijo pid=131156: CANCELADA.
+[pid=131122 ppid=131050 N=3 i=1] Tarea completada. Solucionador: pid=131147 ppid=131122 N=4 i=2.
+[pid=131126 ppid=131049 N=3 i=2] Tarea completada. Solucionador: pid=131161 ppid=131126 N=4 i=2.
+[pid=131122 ppid=131050 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131121 ppid=131049 N=3 i=1] PIPE CANCELAR -> hijo pid=131148.
+[pid=131126 ppid=131049 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131118 ppid=131045 N=3 i=2] PIPE RESULTADO <- hijo pid=131140: RESUELTA.
+[pid=131118 ppid=131045 N=3 i=2] Tarea completada. Solucionador: pid=131134 ppid=131118 N=4 i=1.
+[pid=131118 ppid=131045 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131165 ppid=131128 N=4 i=3] Gracias por dejarme servirle. Adios. Estado=CANCELADA. Envio resultado por PIPE.
+[pid=131128 ppid=131048 N=3 i=3] PIPE CANCELAR -> hijo pid=131165.
+[pid=131121 ppid=131049 N=3 i=1] PIPE RESULTADO <- hijo pid=131148: RESUELTA.
+[pid=131121 ppid=131049 N=3 i=1] Tarea completada. Solucionador: pid=131138 ppid=131121 N=4 i=1.
+[pid=131121 ppid=131049 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131128 ppid=131048 N=3 i=3] PIPE RESULTADO <- hijo pid=131162: RESUELTA.
+[pid=131164 ppid=131127 N=4 i=2] Gracias por dejarme servirle. Adios. Estado=CANCELADA. Envio resultado por PIPE.
+[pid=131047 ppid=131044 N=2 i=3] PIPE RESULTADO <- hijo pid=131117: RESUELTA.
+[pid=131047 ppid=131044 N=2 i=3] PIPE CANCELAR -> hijo pid=131123.
+[pid=131123 ppid=131047 N=3 i=2] PIPE RESULTADO <- hijo pid=131150: CANCELADA.
+[pid=131047 ppid=131044 N=2 i=3] PIPE CANCELAR -> hijo pid=131129.
+[pid=131123 ppid=131047 N=3 i=2] Tarea completada. Solucionador: pid=131142 ppid=131123 N=4 i=1.
+[pid=131123 ppid=131047 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131046 ppid=131044 N=2 i=2] PIPE RESULTADO <- hijo pid=131120: RESUELTA.
+[pid=131046 ppid=131044 N=2 i=2] PIPE CANCELAR -> hijo pid=131116.
+[pid=131047 ppid=131044 N=2 i=3] PIPE RESULTADO <- hijo pid=131129: RESUELTA.
+[pid=131050 ppid=131044 N=2 i=6] PIPE RESULTADO <- hijo pid=131122: RESUELTA.
+[pid=131125 ppid=131045 N=3 i=3] PIPE RESULTADO <- hijo pid=131158: RESUELTA.
+[pid=131125 ppid=131045 N=3 i=3] Tarea completada. Solucionador: pid=131163 ppid=131125 N=4 i=2.
+[pid=131125 ppid=131045 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131045 ppid=131044 N=2 i=1] PIPE RESULTADO <- hijo pid=131118: RESUELTA.
+[pid=131119 ppid=131048 N=3 i=1] PIPE RESULTADO <- hijo pid=131160: RESUELTA.
+[pid=131119 ppid=131048 N=3 i=1] PIPE CANCELAR -> hijo pid=131166.
+[pid=131049 ppid=131044 N=2 i=5] PIPE RESULTADO <- hijo pid=131121: RESUELTA.
+[pid=131049 ppid=131044 N=2 i=5] PIPE CANCELAR -> hijo pid=131126.
+[pid=131049 ppid=131044 N=2 i=5] PIPE CANCELAR -> hijo pid=131131.
+[pid=131128 ppid=131048 N=3 i=3] PIPE RESULTADO <- hijo pid=131165: CANCELADA.
+[pid=131127 ppid=131050 N=3 i=2] PIPE RESULTADO <- hijo pid=131164: CANCELADA.
+[pid=131128 ppid=131048 N=3 i=3] Tarea completada. Solucionador: pid=131157 ppid=131128 N=4 i=1.
+[pid=131127 ppid=131050 N=3 i=2] Tarea completada. Solucionador: pid=131159 ppid=131127 N=4 i=1.
+[pid=131128 ppid=131048 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131127 ppid=131050 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131119 ppid=131048 N=3 i=1] PIPE RESULTADO <- hijo pid=131166: RESUELTA.
+[pid=131119 ppid=131048 N=3 i=1] Tarea completada. Solucionador: pid=131160 ppid=131119 N=4 i=1.
+[pid=131119 ppid=131048 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131116 ppid=131046 N=3 i=1] PIPE RESULTADO <- hijo pid=131145: RESUELTA.
+[pid=131131 ppid=131049 N=3 i=3] PIPE RESULTADO <- hijo pid=131153: RESUELTA.
+[pid=131116 ppid=131046 N=3 i=1] PIPE CANCELAR -> hijo pid=131136.
+[pid=131131 ppid=131049 N=3 i=3] PIPE CANCELAR -> hijo pid=131167.
+[pid=131049 ppid=131044 N=2 i=5] PIPE RESULTADO <- hijo pid=131126: RESUELTA.
+[pid=131131 ppid=131049 N=3 i=3] PIPE RESULTADO <- hijo pid=131167: RESUELTA.
+[pid=131131 ppid=131049 N=3 i=3] Tarea completada. Solucionador: pid=131153 ppid=131131 N=4 i=1.
+[pid=131116 ppid=131046 N=3 i=1] PIPE RESULTADO <- hijo pid=131136: RESUELTA.
+[pid=131116 ppid=131046 N=3 i=1] Tarea completada. Solucionador: pid=131145 ppid=131116 N=4 i=2.
+[pid=131131 ppid=131049 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131116 ppid=131046 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131047 ppid=131044 N=2 i=3] PIPE RESULTADO <- hijo pid=131123: RESUELTA.
+[pid=131047 ppid=131044 N=2 i=3] Tarea completada. Solucionador: pid=131133 ppid=131117 N=4 i=1.
+[pid=131047 ppid=131044 N=2 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131045 ppid=131044 N=2 i=1] PIPE RESULTADO <- hijo pid=131125: RESUELTA.
+[pid=131045 ppid=131044 N=2 i=1] Tarea completada. Solucionador: pid=131132 ppid=131115 N=4 i=1.
+[pid=131045 ppid=131044 N=2 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131050 ppid=131044 N=2 i=6] PIPE RESULTADO <- hijo pid=131127: RESUELTA.
+[pid=131048 ppid=131044 N=2 i=4] PIPE RESULTADO <- hijo pid=131119: RESUELTA.
+[pid=131049 ppid=131044 N=2 i=5] PIPE RESULTADO <- hijo pid=131131: RESUELTA.
+[pid=131046 ppid=131044 N=2 i=2] PIPE RESULTADO <- hijo pid=131116: RESUELTA.
+[pid=131049 ppid=131044 N=2 i=5] Tarea completada. Solucionador: pid=131138 ppid=131121 N=4 i=1.
+[pid=131046 ppid=131044 N=2 i=2] Tarea completada. Solucionador: pid=131144 ppid=131120 N=4 i=1.
+[pid=131049 ppid=131044 N=2 i=5] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131046 ppid=131044 N=2 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131050 ppid=131044 N=2 i=6] Tarea completada. Solucionador: pid=131149 ppid=131130 N=4 i=1.
+[pid=131050 ppid=131044 N=2 i=6] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131048 ppid=131044 N=2 i=4] PIPE RESULTADO <- hijo pid=131128: RESUELTA.
+[pid=131048 ppid=131044 N=2 i=4] Tarea completada. Solucionador: pid=131135 ppid=131124 N=4 i=1.
+[pid=131048 ppid=131044 N=2 i=4] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131047: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] PIPE CANCELAR -> hijo pid=131045.
+[pid=131044 ppid=131042 N=1 i=1] PIPE CANCELAR -> hijo pid=131046.
+[pid=131044 ppid=131042 N=1 i=1] PIPE CANCELAR -> hijo pid=131048.
+[pid=131044 ppid=131042 N=1 i=1] PIPE CANCELAR -> hijo pid=131049.
+[pid=131044 ppid=131042 N=1 i=1] PIPE CANCELAR -> hijo pid=131050.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131045: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131046: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131048: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131049: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] PIPE RESULTADO <- hijo pid=131050: RESUELTA.
+[pid=131044 ppid=131042 N=1 i=1] Tarea completada. Solucionador: pid=131133 ppid=131117 N=4 i=1.
+[pid=131044 ppid=131042 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+
+RESUMEN #1 | RESUELTA
+Solicitud: dificil
+Resultado: Solicitud textual completada
+Facilidad inicial usada: 20.000000
+Meeseeks creados=61 | pico activos=61 | nivel maximo=4
+Duracion total (reloj monotono)=2.007396 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.076907 s
+Suma de pausas individuales=30.541970 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+Solucionador: pid=131133 ppid=131117 N=4 i=1
+
+INFORME FINAL BOX
+1. dificil | RESUELTA | 61 Meeseeks | total=2.007396 s | CPU sin pausas=0.076907 s
+Solicitudes=1 | resueltas=1 | no resueltas=0. Adios.

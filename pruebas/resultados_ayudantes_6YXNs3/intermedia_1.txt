@@ -1,0 +1,112 @@
+Comando: ./build/box --task intermedia --ease 60 --delay 0.5 --seed 42 --limit 96 --csv pruebas/resultados_ayudantes_6YXNs3/resumen.csv 
+
+BOX pid=130755 | limite total=96 | caos=300.0 s | observacion=no
+[pid=130755 ppid=130727 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=130757.
+[pid=130757 ppid=130755 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130757, ppid=130755, N=1, i=1)
+[pid=130757 ppid=130755 N=1 i=1] PIPE RECIBIDO: intermedia
+[pid=130757 ppid=130755 N=1 i=1] FACILIDAD inicial=60.0000; efectiva=60.0000; PAUSA=0.500000 s (fija).
+[pid=130757 ppid=130755 N=1 i=1] AYUDA: facilidad efectiva=60.0000; minimo=2; P(extra)=0.4000; sorteo=0.0026; creare=3.
+[pid=130757 ppid=130755 N=1 i=1] PIPE SOLICITUD -> hijo pid=130772 N=2 i=1.
+[pid=130772 ppid=130757 N=2 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130772, ppid=130757, N=2, i=1)
+[pid=130772 ppid=130757 N=2 i=1] PIPE RECIBIDO: intermedia
+[pid=130772 ppid=130757 N=2 i=1] FACILIDAD inicial=60.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=130757 ppid=130755 N=1 i=1] PIPE SOLICITUD -> hijo pid=130773 N=2 i=2.
+[pid=130773 ppid=130757 N=2 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130773, ppid=130757, N=2, i=2)
+[pid=130773 ppid=130757 N=2 i=2] PIPE RECIBIDO: intermedia
+[pid=130773 ppid=130757 N=2 i=2] FACILIDAD inicial=60.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=130757 ppid=130755 N=1 i=1] PIPE SOLICITUD -> hijo pid=130774 N=2 i=3.
+[pid=130774 ppid=130757 N=2 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130774, ppid=130757, N=2, i=3)
+[pid=130774 ppid=130757 N=2 i=3] PIPE RECIBIDO: intermedia
+[pid=130774 ppid=130757 N=2 i=3] FACILIDAD inicial=60.0000; efectiva=80.0000; PAUSA=0.500000 s (fija).
+[pid=130772 ppid=130757 N=2 i=1] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.3019; creare=2.
+[pid=130774 ppid=130757 N=2 i=3] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.0922; creare=3.
+[pid=130772 ppid=130757 N=2 i=1] PIPE SOLICITUD -> hijo pid=130775 N=3 i=1.
+[pid=130773 ppid=130757 N=2 i=2] AYUDA: facilidad efectiva=80.0000; minimo=2; P(extra)=0.2000; sorteo=0.4811; creare=2.
+[pid=130775 ppid=130772 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130775, ppid=130772, N=3, i=1)
+[pid=130775 ppid=130772 N=3 i=1] PIPE RECIBIDO: intermedia
+[pid=130775 ppid=130772 N=3 i=1] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130774 ppid=130757 N=2 i=3] PIPE SOLICITUD -> hijo pid=130776 N=3 i=1.
+[pid=130773 ppid=130757 N=2 i=2] PIPE SOLICITUD -> hijo pid=130778 N=3 i=1.
+[pid=130772 ppid=130757 N=2 i=1] PIPE SOLICITUD -> hijo pid=130777 N=3 i=2.
+[pid=130777 ppid=130772 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130777, ppid=130772, N=3, i=2)
+[pid=130777 ppid=130772 N=3 i=2] PIPE RECIBIDO: intermedia
+[pid=130777 ppid=130772 N=3 i=2] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130776 ppid=130774 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130776, ppid=130774, N=3, i=1)
+[pid=130776 ppid=130774 N=3 i=1] PIPE RECIBIDO: intermedia
+[pid=130778 ppid=130773 N=3 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130778, ppid=130773, N=3, i=1)
+[pid=130776 ppid=130774 N=3 i=1] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130778 ppid=130773 N=3 i=1] PIPE RECIBIDO: intermedia
+[pid=130778 ppid=130773 N=3 i=1] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130773 ppid=130757 N=2 i=2] PIPE SOLICITUD -> hijo pid=130779 N=3 i=2.
+[pid=130774 ppid=130757 N=2 i=3] PIPE SOLICITUD -> hijo pid=130780 N=3 i=2.
+[pid=130779 ppid=130773 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130779, ppid=130773, N=3, i=2)
+[pid=130779 ppid=130773 N=3 i=2] PIPE RECIBIDO: intermedia
+[pid=130779 ppid=130773 N=3 i=2] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130780 ppid=130774 N=3 i=2] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130780, ppid=130774, N=3, i=2)
+[pid=130780 ppid=130774 N=3 i=2] PIPE RECIBIDO: intermedia
+[pid=130780 ppid=130774 N=3 i=2] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130774 ppid=130757 N=2 i=3] PIPE SOLICITUD -> hijo pid=130781 N=3 i=3.
+[pid=130781 ppid=130774 N=3 i=3] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=130781, ppid=130774, N=3, i=3)
+[pid=130781 ppid=130774 N=3 i=3] PIPE RECIBIDO: intermedia
+[pid=130781 ppid=130774 N=3 i=3] FACILIDAD inicial=60.0000; efectiva=90.0000; PAUSA=0.500000 s (fija).
+[pid=130779 ppid=130773 N=3 i=2] SOLUCION encontrada: intermedia
+[pid=130777 ppid=130772 N=3 i=2] SOLUCION encontrada: intermedia
+[pid=130775 ppid=130772 N=3 i=1] SOLUCION encontrada: intermedia
+[pid=130775 ppid=130772 N=3 i=1] Tarea completada. Solucionador: pid=130775 ppid=130772 N=3 i=1.
+[pid=130780 ppid=130774 N=3 i=2] SOLUCION encontrada: intermedia
+[pid=130780 ppid=130774 N=3 i=2] Tarea completada. Solucionador: pid=130780 ppid=130774 N=3 i=2.
+[pid=130780 ppid=130774 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130779 ppid=130773 N=3 i=2] Tarea completada. Solucionador: pid=130779 ppid=130773 N=3 i=2.
+[pid=130775 ppid=130772 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130777 ppid=130772 N=3 i=2] Tarea completada. Solucionador: pid=130777 ppid=130772 N=3 i=2.
+[pid=130779 ppid=130773 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130777 ppid=130772 N=3 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130776 ppid=130774 N=3 i=1] SOLUCION encontrada: intermedia
+[pid=130776 ppid=130774 N=3 i=1] Tarea completada. Solucionador: pid=130776 ppid=130774 N=3 i=1.
+[pid=130776 ppid=130774 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130778 ppid=130773 N=3 i=1] SOLUCION encontrada: intermedia
+[pid=130778 ppid=130773 N=3 i=1] Tarea completada. Solucionador: pid=130778 ppid=130773 N=3 i=1.
+[pid=130778 ppid=130773 N=3 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130781 ppid=130774 N=3 i=3] SOLUCION encontrada: intermedia
+[pid=130781 ppid=130774 N=3 i=3] Tarea completada. Solucionador: pid=130781 ppid=130774 N=3 i=3.
+[pid=130781 ppid=130774 N=3 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130772 ppid=130757 N=2 i=1] PIPE RESULTADO <- hijo pid=130775: RESUELTA.
+[pid=130773 ppid=130757 N=2 i=2] PIPE RESULTADO <- hijo pid=130778: RESUELTA.
+[pid=130772 ppid=130757 N=2 i=1] PIPE CANCELAR -> hijo pid=130777.
+[pid=130773 ppid=130757 N=2 i=2] PIPE CANCELAR -> hijo pid=130779.
+[pid=130774 ppid=130757 N=2 i=3] PIPE RESULTADO <- hijo pid=130776: RESUELTA.
+[pid=130774 ppid=130757 N=2 i=3] PIPE CANCELAR -> hijo pid=130780.
+[pid=130774 ppid=130757 N=2 i=3] PIPE CANCELAR -> hijo pid=130781.
+[pid=130772 ppid=130757 N=2 i=1] PIPE RESULTADO <- hijo pid=130777: RESUELTA.
+[pid=130772 ppid=130757 N=2 i=1] Tarea completada. Solucionador: pid=130775 ppid=130772 N=3 i=1.
+[pid=130772 ppid=130757 N=2 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130773 ppid=130757 N=2 i=2] PIPE RESULTADO <- hijo pid=130779: RESUELTA.
+[pid=130773 ppid=130757 N=2 i=2] Tarea completada. Solucionador: pid=130778 ppid=130773 N=3 i=1.
+[pid=130773 ppid=130757 N=2 i=2] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130774 ppid=130757 N=2 i=3] PIPE RESULTADO <- hijo pid=130780: RESUELTA.
+[pid=130774 ppid=130757 N=2 i=3] PIPE RESULTADO <- hijo pid=130781: RESUELTA.
+[pid=130774 ppid=130757 N=2 i=3] Tarea completada. Solucionador: pid=130776 ppid=130774 N=3 i=1.
+[pid=130774 ppid=130757 N=2 i=3] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+[pid=130757 ppid=130755 N=1 i=1] PIPE RESULTADO <- hijo pid=130772: RESUELTA.
+[pid=130757 ppid=130755 N=1 i=1] PIPE CANCELAR -> hijo pid=130773.
+[pid=130757 ppid=130755 N=1 i=1] PIPE CANCELAR -> hijo pid=130774.
+[pid=130757 ppid=130755 N=1 i=1] PIPE RESULTADO <- hijo pid=130773: RESUELTA.
+[pid=130757 ppid=130755 N=1 i=1] PIPE RESULTADO <- hijo pid=130774: RESUELTA.
+[pid=130757 ppid=130755 N=1 i=1] Tarea completada. Solucionador: pid=130775 ppid=130772 N=3 i=1.
+[pid=130757 ppid=130755 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+
+RESUMEN #1 | RESUELTA
+Solicitud: intermedia
+Resultado: Solicitud textual completada
+Facilidad inicial usada: 60.000000
+Meeseeks creados=11 | pico activos=11 | nivel maximo=3
+Duracion total (reloj monotono)=1.504814 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.016701 s
+Suma de pausas individuales=5.505435 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+Solucionador: pid=130775 ppid=130772 N=3 i=1
+
+INFORME FINAL BOX
+1. intermedia | RESUELTA | 11 Meeseeks | total=1.504814 s | CPU sin pausas=0.016701 s
+Solicitudes=1 | resueltas=1 | no resueltas=0. Adios.
