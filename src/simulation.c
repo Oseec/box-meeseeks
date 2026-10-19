@@ -1,8 +1,8 @@
 /*
- * Tarea: Box de Mr. Meeseeks — árbol de ayudantes (caso A).
+ * Tarea: Box de Mr. Meeseeks — motor de los casos A y B.
  * Autor: Isaac Gamba Ureña. Carné: 2022437592.
  * Instituto Tecnológico de Costa Rica. Curso: Sistemas Operativos.
- * Lenguaje: C11. Plataforma: Linux.
+ * Lenguaje: C11. Plataforma: Linux. 
  *
  * Un solo ejecutable: cada hijo entra en worker() y puede crear otros hijos.
  * Dos pipes privados por enlace: solicitud/cancelación hacia abajo y resultado
@@ -12,6 +12,7 @@
  */
 #define _GNU_SOURCE
 #include "simulation.h"
+#include "calculator.h"
 
 #include <errno.h>
 #include <fcntl.h>
@@ -77,6 +78,7 @@ const char *task_status_name(TaskStatus status)
     case TASK_RESOLVED: return "RESUELTA";
     case TASK_LIMIT: return "LIMITE_RECURSOS";
     case TASK_CANCELLED: return "CANCELADA";
+    case TASK_FAILED: return "FALLIDA";
     case TASK_ERROR: return "ERROR";
     }
     return "DESCONOCIDO";
@@ -456,6 +458,25 @@ static void request_help(SharedCounters *shared, const TaskMessage *task,
     }
 }
 
+typedef struct {
+    SharedCounters *shared;
+    const TaskMessage *task;
+} CalcContext;
+
+static void calculation_step(void *context, const char *step)
+{
+    CalcContext *calculation = context;
+    message(calculation->shared, calculation->task, "%s", step);
+}
+
+static void set_solver(TaskResult *result, const TaskMessage *task)
+{
+    result->solver_pid = getpid();
+    result->solver_ppid = getppid();
+    result->solver_level = task->level;
+    result->solver_instance = task->instance;
+}
+
 static void worker(SharedCounters *shared, int down, int up)
 {
     TaskMessage task;
@@ -465,34 +486,51 @@ static void worker(SharedCounters *shared, int down, int up)
     }
     enter_worker(shared, task.level);
     unsigned int seed = task.seed;
-    if (task.ease < 0.0) {
+    if (task.kind == 'A' && task.ease < 0.0) {
         task.ease = 100.0 * random_unit(&seed);
     }
     TaskResult result = {.status = TASK_ERROR, .initial_ease = task.ease};
     message(shared, &task, "Hi, I'm Mr. Meeseeks! Look at Meeeee. "
             "(pid=%ld, ppid=%ld, N=%u, i=%u)",
             (long)getpid(), (long)getppid(), task.level, task.instance);
-    message(shared, &task, "PIPE RECIBIDO: %s", task.text);
-    double effective = task.ease == 0.0 ? 0.0 :
-        100.0 - (100.0 - task.ease) * pow(0.5, (double)task.level - 1.0);
-    double delay = task.wait_seconds < 0.0 ?
-        0.5 + 4.5 * random_unit(&seed) : task.wait_seconds;
-    message(shared, &task,
-            "FACILIDAD inicial=%.4f; efectiva=%.4f; PAUSA=%.6f s (%s).",
-            task.ease, effective, delay, task.wait_seconds < 0.0 ? "aleatoria" : "fija");
-    if (simulated_pause(down, delay, &result.simulated_wait_ns)) {
+    message(shared, &task, "PIPE RECIBIDO: caso %c; solicitud: %s", task.kind, task.text);
+    if (cancellation_received(down, 0)) {
         result.status = TASK_CANCELLED;
-        snprintf(result.detail, sizeof(result.detail), "Pausa cancelada por el padre");
-    } else if (effective > 85.0) {
-        result.status = TASK_RESOLVED;
-        result.solver_pid = getpid();
-        result.solver_ppid = getppid();
-        result.solver_level = task.level;
-        result.solver_instance = task.instance;
-        snprintf(result.detail, sizeof(result.detail), "Solicitud textual completada");
-        message(shared, &task, "SOLUCION encontrada: %s", task.text);
+        snprintf(result.detail, sizeof(result.detail), "Cancelado antes de iniciar");
+    } else if (task.kind == 'B') {
+        message(shared, &task, "CALCULO iniciado: analizo numeros, parentesis y precedencia.");
+        CalcContext context = {shared, &task};
+        if (calculate(task.text, &result.value, result.detail, sizeof(result.detail),
+                      calculation_step, &context) == 0) {
+            result.status = TASK_RESOLVED;
+            set_solver(&result, &task);
+            snprintf(result.detail, sizeof(result.detail), "Resultado = %.12g", result.value);
+            message(shared, &task, "CALCULO terminado: %s", result.detail);
+        } else {
+            result.status = TASK_FAILED;
+            message(shared, &task, "ERROR DE CALCULO: %s", result.detail);
+        }
+    } else if (task.kind == 'A') {
+        double effective = task.ease == 0.0 ? 0.0 :
+            100.0 - (100.0 - task.ease) * pow(0.5, (double)task.level - 1.0);
+        double delay = task.wait_seconds < 0.0 ?
+            0.5 + 4.5 * random_unit(&seed) : task.wait_seconds;
+        message(shared, &task,
+                "FACILIDAD inicial=%.4f; efectiva=%.4f; PAUSA=%.6f s (%s).",
+                task.ease, effective, delay, task.wait_seconds < 0.0 ? "aleatoria" : "fija");
+        if (simulated_pause(down, delay, &result.simulated_wait_ns)) {
+            result.status = TASK_CANCELLED;
+            snprintf(result.detail, sizeof(result.detail), "Pausa cancelada por el padre");
+        } else if (effective > 85.0) {
+            result.status = TASK_RESOLVED;
+            set_solver(&result, &task);
+            snprintf(result.detail, sizeof(result.detail), "Solicitud textual completada");
+            message(shared, &task, "SOLUCION encontrada: %s", task.text);
+        } else {
+            request_help(shared, &task, down, up, &result, effective, &seed);
+        }
     } else {
-        request_help(shared, &task, down, up, &result, effective, &seed);
+        snprintf(result.detail, sizeof(result.detail), "Tipo de solicitud desconocido");
     }
     if (result.status == TASK_RESOLVED) {
         message(shared, &task, "Tarea completada. Solucionador: pid=%ld ppid=%ld N=%u i=%u.",

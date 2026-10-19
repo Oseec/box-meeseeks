@@ -1,10 +1,11 @@
 /*
- * Tarea: Box de Mr. Meeseeks — caso A.
+ * Tarea: Box de Mr. Meeseeks — casos A y B.
  * Autor: Isaac Gamba Ureña. Carné: 2022437592.
  * Instituto Tecnológico de Costa Rica. Curso: Sistemas Operativos.
  * Lenguaje: C11. Plataforma: Linux. 
  * Contratos de los mensajes privados y del resumen de una solicitud.
  */
+ 
 #ifndef SIMULATION_H
 #define SIMULATION_H
 
@@ -20,11 +21,13 @@ typedef enum {
     TASK_RESOLVED,
     TASK_LIMIT,
     TASK_CANCELLED,
+    TASK_FAILED,
     TASK_ERROR
 } TaskStatus;
 
 /* Se envía por pipe a cada hijo; no se usa mmap para transmitir solicitudes. */
 typedef struct {
+    char kind;                /* A: simulación textual. B: cálculo. */
     char text[TASK_SIZE];
     double ease;              /* -1: sortear en el primer Meeseeks. */
     double wait_seconds;      /* -1: pausa uniforme entre 0.5 y 5. */
@@ -44,6 +47,7 @@ typedef struct {
     unsigned int solver_level;
     unsigned int solver_instance;
     double initial_ease;
+    double value;             /* Resultado numérico válido si B se resolvió. */
     uint64_t simulated_wait_ns; /* Suma de pausas; pueden superponerse. */
     char detail[DETAIL_SIZE];
 } TaskResult;

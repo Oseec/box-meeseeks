@@ -1,0 +1,23 @@
+Comando: ./build/box --case B --task 10/0 --seed 42 --csv pruebas/resultados_B_zhiNjB/resumen_B.csv 
+
+BOX pid=136815 | limite total=96 | caos=300.0 s | observacion=no
+[pid=136815 ppid=136794 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=136817.
+[pid=136817 ppid=136815 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=136817, ppid=136815, N=1, i=1)
+[pid=136817 ppid=136815 N=1 i=1] PIPE RECIBIDO: caso B; solicitud: 10/0
+[pid=136817 ppid=136815 N=1 i=1] CALCULO iniciado: analizo numeros, parentesis y precedencia.
+[pid=136817 ppid=136815 N=1 i=1] ERROR DE CALCULO: Division entre cero (posicion 5)
+[pid=136817 ppid=136815 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=FALLIDA. Envio resultado por PIPE.
+
+RESUMEN #1 | FALLIDA | caso=B
+Solicitud: 10/0
+Resultado: Division entre cero (posicion 5)
+Meeseeks creados=1 | pico activos=1 | nivel maximo=1
+Duracion total (reloj monotono)=0.000540 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.000314 s
+Suma de pausas individuales=0.000000 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+
+INFORME FINAL BOX
+1. [B] 10/0 | FALLIDA | 1 Meeseeks | total=0.000540 s | CPU sin pausas=0.000314 s
+Solicitudes=1 | resueltas=0 | no resueltas=1. Adios.

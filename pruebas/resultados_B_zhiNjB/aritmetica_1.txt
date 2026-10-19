@@ -1,0 +1,27 @@
+Comando: ./build/box --case B --task 2+3\*4 --seed 42 --csv pruebas/resultados_B_zhiNjB/resumen_B.csv 
+
+BOX pid=136797 | limite total=96 | caos=300.0 s | observacion=no
+[pid=136797 ppid=136794 N=0 i=0] BOX: PIPE SOLICITUD -> Meeseeks original pid=136799.
+[pid=136799 ppid=136797 N=1 i=1] Hi, I'm Mr. Meeseeks! Look at Meeeee. (pid=136799, ppid=136797, N=1, i=1)
+[pid=136799 ppid=136797 N=1 i=1] PIPE RECIBIDO: caso B; solicitud: 2+3*4
+[pid=136799 ppid=136797 N=1 i=1] CALCULO iniciado: analizo numeros, parentesis y precedencia.
+[pid=136799 ppid=136797 N=1 i=1] CALCULO paso 1: 3 * 4 = 12
+[pid=136799 ppid=136797 N=1 i=1] CALCULO paso 2: 2 + 12 = 14
+[pid=136799 ppid=136797 N=1 i=1] CALCULO terminado: Resultado = 14
+[pid=136799 ppid=136797 N=1 i=1] Tarea completada. Solucionador: pid=136799 ppid=136797 N=1 i=1.
+[pid=136799 ppid=136797 N=1 i=1] Gracias por dejarme servirle. Adios. Estado=RESUELTA. Envio resultado por PIPE.
+
+RESUMEN #1 | RESUELTA | caso=B
+Solicitud: 2+3*4
+Resultado: Resultado = 14
+Meeseeks creados=1 | pico activos=1 | nivel maximo=1
+Duracion total (reloj monotono)=0.000512 s
+CPU agregada de Box y descendientes (sin espera artificial)=0.000269 s
+Suma de pausas individuales=0.000000 s (pueden superponerse)
+Meeseeks activos al cierre=0
+Caos=no | cierre forzado=no
+Solucionador: pid=136799 ppid=136797 N=1 i=1
+
+INFORME FINAL BOX
+1. [B] 2+3*4 | RESUELTA | 1 Meeseeks | total=0.000512 s | CPU sin pausas=0.000269 s
+Solicitudes=1 | resueltas=1 | no resueltas=0. Adios.

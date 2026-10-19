@@ -1,10 +1,10 @@
 /*
- * Traea: Box de Mr. Meeseeks — interfaz y resumen del caso A.
+ * Proyecto: Box de Mr. Meeseeks — interfaz y resumen de los casos A y B.
  * Autor: Isaac Gamba Ureña. Carné: 2022437592.
  * Instituto Tecnológico de Costa Rica. Curso: Sistemas Operativos.
- * Lenguaje: C11. Plataforma: Linux.
+ * Lenguaje: C11. Plataforma: Linux. Fecha: 18/10/2026.
  * Compilar: make. Ejecutar: ./build/box o ./build/box --help.
- * Esta etapa implementa consultas textuales, no los casos de cálculo/exec.
+ * A: simulación textual. B: expresiones aritméticas/lógicas. C sigue pendiente.
  */
 #define _POSIX_C_SOURCE 200809L
 #include "simulation.h"
@@ -21,11 +21,12 @@
 
 static void print_help(void)
 {
-    puts("Box de Mr. Meeseeks — avance del caso A, Linux/C11\n"
-         "Sin --task: solicita varias tareas hasta salir/adios.\n"
+    puts("Box de Mr. Meeseeks — casos A y B, Linux/C11\n"
+         "Sin --task: menu A/B para varias tareas hasta salir/adios.\n"
+         "  --case A|B          tipo para una solicitud individual (defecto A)\n"
          "  --task TEXTO        ejecutar una sola solicitud\n"
-         "  --ease N|random     facilidad 0..100; 0 imposible, 100 facil\n"
-         "  --delay N|random    pausa fija 0..3600 s o aleatoria 0.5..5 s\n"
+         "  --ease N|random     facilidad 0..100; solo A\n"
+         "  --delay N|random    pausa fija 0..3600 s o aleatoria 0.5..5 s; solo A\n"
          "  --seed N            semilla reproducible 0..4294967295\n"
          "  --limit N           limite TOTAL de Meeseeks: 6..256 (defecto 96)\n"
          "  --timeout N         umbral de caos: 300..86400 s (defecto 300)\n"
@@ -34,7 +35,7 @@ static void print_help(void)
          "  --csv RUTA          agregar resultados en CSV\n"
          "  --help              mostrar esta ayuda\n"
          "Retorno en modo --task: 0 resuelta, 1 no resuelta, 2 error de uso.\n"
-         "Ejemplo: ./build/box --task Cafe --ease 60 --delay 0.5 --seed 42");
+         "Ejemplo: ./build/box --case B --task '(2+3)*4'");
 }
 
 /* 1 línea válida; 0 EOF; 2 línea larga; -1 error. */
@@ -84,9 +85,10 @@ static int blank_text(const char *text)
 
 static void print_report(const TaskReport *report, unsigned int index)
 {
-    printf("\nRESUMEN #%u | %s\n", index, task_status_name(report->result.status));
+    printf("\nRESUMEN #%u | %s | caso=%c\n", index,
+           task_status_name(report->result.status), report->task.kind);
     printf("Solicitud: %s\nResultado: %s\n", report->task.text, report->result.detail);
-    if (report->result.status != TASK_ERROR) {
+    if (report->task.kind == 'A' && report->result.status != TASK_ERROR) {
         printf("Facilidad inicial usada: %.6f\n", report->result.initial_ease);
     }
     printf("Meeseeks creados=%u | pico activos=%u | nivel maximo=%u\n",
@@ -122,24 +124,83 @@ static void csv_text(FILE *file, const char *text)
 
 static int append_csv(const char *path, const TaskReport *report)
 {
+    const char *header = "case,task,ease,delay,seed,status,created,peak,levels,wall_s,cpu_s,"
+                         "sum_wait_s,chaos,forced,solver_pid,solver_level,value,detail\n";
     FILE *file = fopen(path, "a+");
     if (file == NULL) return -1;
     if (fseek(file, 0, SEEK_END) != 0) { fclose(file); return -1; }
-    if (ftell(file) == 0) {
-        fputs("task,ease,delay,seed,status,created,peak,levels,wall_s,cpu_s,"
-              "sum_wait_s,chaos,forced,solver_pid,solver_level\n", file);
+    long length = ftell(file);
+    if (length < 0) { fclose(file); return -1; }
+    if (length == 0) {
+        fputs(header, file);
+    } else {
+        char existing[512];
+        rewind(file);
+        if (fgets(existing, sizeof(existing), file) == NULL || strcmp(existing, header)) {
+            fclose(file);
+            errno = EINVAL;
+            return -1;
+        }
+        if (fseek(file, 0, SEEK_END) != 0) { fclose(file); return -1; }
     }
+    fprintf(file, "%c,", report->task.kind);
     csv_text(file, report->task.text);
-    fprintf(file, ",%.9f,%.6f,%u,%s,%u,%u,%u,%.9f,%.9f,%.9f,%d,%d,%ld,%u\n",
-            report->result.initial_ease, report->task.wait_seconds, report->task.seed,
+    if (report->task.kind == 'A') {
+        fprintf(file, ",%.9f,%.6f", report->result.initial_ease, report->task.wait_seconds);
+    } else {
+        fputs(",,", file);
+    }
+    fprintf(file, ",%u,%s,%u,%u,%u,%.9f,%.9f,%.9f,%d,%d,%ld,%u,", report->task.seed,
             task_status_name(report->result.status), report->created,
             report->peak_active, report->max_level, report->wall_seconds,
             report->cpu_seconds, report->forced ? -1.0 :
             (double)report->result.simulated_wait_ns / 1000000000.0,
             report->chaos, report->forced, (long)report->result.solver_pid,
             report->result.solver_level);
+    if (report->task.kind == 'B' && report->result.status == TASK_RESOLVED) {
+        fprintf(file, "%.17g", report->result.value);
+    }
+    fputc(',', file);
+    csv_text(file, report->result.detail);
+    fputc('\n', file);
     int failed = ferror(file);
     return fclose(file) == 0 && !failed ? 0 : -1;
+}
+
+/* 1 tarea lista; 0 salir/EOF; 2 entrada inválida; -1 error de lectura. */
+static int read_interactive(TaskMessage *task)
+{
+    char type[16];
+    int input = read_line("\nTipo de solicitud (A=texto, B=calculo, salir/adios): ",
+                          type, sizeof(type));
+    if (input <= 0) return input;
+    if (!strcmp(type, "salir") || !strcmp(type, "adios") || !strcmp(type, "adiós")) return 0;
+    if (input == 2 || strlen(type) != 1 || !strchr("ABab", type[0])) {
+        puts("Elija A o B."); return 2;
+    }
+    task->kind = (char)toupper((unsigned char)type[0]);
+    input = read_line(task->kind == 'A' ? "Solicitud textual: " : "Expresion: ",
+                      task->text, sizeof(task->text));
+    if (input <= 0) return input;
+    if (input == 2) { puts("La solicitud es demasiado larga."); return 2; }
+    if (blank_text(task->text)) { puts("La solicitud no puede estar vacia."); return 2; }
+    if (task->kind == 'B') return 1;
+
+    char buffer[64];
+    input = read_line("Facilidad de la tarea (0..100 o azar): ", buffer, sizeof(buffer));
+    if (input <= 0) return input;
+    if (input == 1 && !strcmp(buffer, "azar")) task->ease = -1;
+    else if (input == 2 || !parse_number(buffer, 0, 100, &task->ease)) {
+        puts("La facilidad debe estar entre 0 y 100, o escriba azar."); return 2;
+    }
+    input = read_line("Pausa simulada (Enter=azar 0.5..5; numero 0..3600=fija): ",
+                      buffer, sizeof(buffer));
+    if (input <= 0) return input;
+    task->wait_seconds = -1;
+    if (input == 2 || (*buffer && !parse_number(buffer, 0, 3600, &task->wait_seconds))) {
+        puts("La pausa debe estar entre 0 y 3600, o dejarse vacia."); return 2;
+    }
+    return 1;
 }
 
 int main(int argc, char **argv)
@@ -154,7 +215,7 @@ int main(int argc, char **argv)
         perror("sigaction"); return 2;
     }
     TaskMessage base = {
-        .ease = 100, .wait_seconds = -1, .level = 1, .instance = 1,
+        .kind = 'A', .ease = 100, .wait_seconds = -1, .level = 1, .instance = 1,
         .seed = (unsigned int)time(NULL) ^ (unsigned int)getpid(),
         .process_limit = 96, .timeout_seconds = 300, .ceiling_seconds = 300
     };
@@ -170,7 +231,9 @@ int main(int argc, char **argv)
         const char *option = argv[j];
         const char *argument = argv[++j];
         double value;
-        if (!strcmp(option, "--task") && !blank_text(argument) && strlen(argument) < TASK_SIZE) {
+        if (!strcmp(option, "--case") && strlen(argument) == 1 && strchr("AB", argument[0])) {
+            base.kind = argument[0];
+        } else if (!strcmp(option, "--task") && !blank_text(argument) && strlen(argument) < TASK_SIZE) {
             snprintf(base.text, sizeof(base.text), "%s", argument);
             single = 1;
         } else if (!strcmp(option, "--ease")) {
@@ -217,42 +280,14 @@ invalid:
         TaskMessage task = base;
         task.seed += count * 2654435761U;
         if (!single) {
-            int input = read_line("\nEscriba una solicitud (salir o adios para terminar): ",
-                                  task.text, sizeof(task.text));
+            int input = read_interactive(&task);
             if (input <= 0) {
                 if (input < 0 && !was_interrupted()) {
-                    perror("Error al leer solicitud"); exit_code = 2;
+                    perror("Error al leer la entrada"); exit_code = 2;
                 }
                 break;
             }
-            if (input == 2) { puts("La solicitud es demasiado larga."); continue; }
-            if (blank_text(task.text)) { puts("La solicitud no puede estar vacia."); continue; }
-            if (!strcmp(task.text, "salir") || !strcmp(task.text, "adios") ||
-                !strcmp(task.text, "adiós")) break;
-            char buffer[64];
-            input = read_line("Facilidad de la tarea (0..100 o azar): ", buffer, sizeof(buffer));
-            if (input <= 0) {
-                if (input < 0 && !was_interrupted()) {
-                    perror("Error al leer facilidad"); exit_code = 2;
-                }
-                break;
-            }
-            if (input == 1 && !strcmp(buffer, "azar")) task.ease = -1;
-            else if (input == 2 || !parse_number(buffer, 0, 100, &task.ease)) {
-                puts("La facilidad debe estar entre 0 y 100, o escriba azar."); continue;
-            }
-            input = read_line("Pausa simulada (Enter=azar 0.5..5; numero 0..3600=fija): ",
-                              buffer, sizeof(buffer));
-            if (input <= 0) {
-                if (input < 0 && !was_interrupted()) {
-                    perror("Error al leer pausa"); exit_code = 2;
-                }
-                break;
-            }
-            task.wait_seconds = -1;
-            if (input == 2 || (*buffer && !parse_number(buffer, 0, 3600, &task.wait_seconds))) {
-                puts("La pausa debe estar entre 0 y 3600, o dejarse vacia."); continue;
-            }
+            if (input == 2) continue;
         }
         if (run_simulation(&task, &reports[count]) == -1) { exit_code = 2; break; }
         print_report(&reports[count], count + 1);
@@ -269,8 +304,8 @@ invalid:
 
     puts("\nINFORME FINAL BOX");
     for (unsigned int j = 0; j < count; j++) {
-        printf("%u. %s | %s | %u Meeseeks | total=%.6f s | CPU sin pausas=%.6f s\n",
-               j + 1, reports[j].task.text, task_status_name(reports[j].result.status),
+        printf("%u. [%c] %s | %s | %u Meeseeks | total=%.6f s | CPU sin pausas=%.6f s\n",
+               j + 1, reports[j].task.kind, reports[j].task.text, task_status_name(reports[j].result.status),
                reports[j].created, reports[j].wall_seconds, reports[j].cpu_seconds);
     }
     printf("Solicitudes=%u | resueltas=%u | no resueltas=%u. Adios.\n",

@@ -55,7 +55,7 @@ grep -q 'Solicitudes=4 | resueltas=3 | no resueltas=1' "$temporary/menu.txt"
 passed=$((passed + 1))
 
 ./build/box --task 'Texto, con "comillas"' --ease 100 --delay 0 --csv "$temporary/resumen.csv" > /dev/null
-grep -q '^"Texto, con ""comillas""",' "$temporary/resumen.csv"
+grep -q '^A,"Texto, con ""comillas""",' "$temporary/resumen.csv"
 passed=$((passed + 1))
 
 printf 'PASS: %s comprobaciones de integracion; contadores, despedidas y cierre verificados.\n' "$passed"

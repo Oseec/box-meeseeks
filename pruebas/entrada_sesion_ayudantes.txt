@@ -1,12 +1,16 @@
+A
 preparar cafe
 100
 0.1
+A
 hacer almuerzo
 60
 0.1
+A
 tarea dificil
 20
 0.1
+A
 tarea imposible
 0
 0.1
